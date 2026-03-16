@@ -48,6 +48,7 @@ plot_config = dict(
     markersize = 10,
     linewidth = 2,
     y_scale_log = True,
+    y_lim = [3e-1, 1e3],
     use_milliseconds = True,
     path_save = 'benchmark/MAC_M4_PRO/sdtw_vs_block.png',
 )

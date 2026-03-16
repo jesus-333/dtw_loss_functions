@@ -392,6 +392,8 @@ def plot_benchmark(plot_config : dict, x_axis_variable_list : list, x_axis_varia
             Line width for the lines in the plot.
         - y_scale_log : bool, default False
             Whether to use a logarithmic scale for the y-axis.
+        - y_lim : tuple, default None
+            Limits for the y-axis. If None, the limits will be set automatically based on the data. If specified, it should be a tuple of the form (y_min, y_max).
         - use_milliseconds : bool, default False
             Whether to use milliseconds instead of seconds for the computation times. If True, the computation times will be multiplied by 1000 and the y-axis label will be updated accordingly.
         - path_save : str, default 'benchmark/plot.png'
@@ -427,6 +429,7 @@ def plot_benchmark(plot_config : dict, x_axis_variable_list : list, x_axis_varia
     if 'markersize' not in plot_config       : plot_config['markersize'] = 8
     if 'linewidth' not in plot_config        : plot_config['linewidth'] = 2
     if 'y_scale_log' not in plot_config      : plot_config['y_scale_log'] = False
+    if 'y_lim' not in plot_config            : plot_config['y_lim'] = None
     if 'use_milliseconds' not in plot_config : plot_config['use_milliseconds'] = False
     if 'path_save' not in plot_config        : plot_config['path_save'] = None
     if color_dict is not None and len(color_dict) != len(data_to_plot_mean) : raise ValueError(f"Length of color_dict must be the same as the length of labels_to_plot. Received {len(color_dict)} and {len(labels_to_plot)}, respectively.")
@@ -464,6 +467,7 @@ def plot_benchmark(plot_config : dict, x_axis_variable_list : list, x_axis_varia
     ax.set_ylabel(f"Computation time ({label_time_unit})", fontsize = plot_config['fontsize'])
     ax.set_xlim(x_axis_variable_list[0], x_axis_variable_list[-1])
     if plot_config['y_scale_log'] : ax.set_yscale('log')
+    if plot_config['y_lim'] is not None : ax.set_ylim(plot_config['y_lim'][0], plot_config['y_lim'][1])
     ax.legend(fontsize = plot_config['fontsize'])
     ax.grid(True)
     fig.tight_layout()

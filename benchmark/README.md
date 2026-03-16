@@ -18,8 +18,10 @@ For clarity of presentation only a subset of the results has been plotted. The p
 ![block_optimized_vs_naive](./MAC_M4_PRO/block_optimized_vs_naive.png)
 
 ### SoftDTW VS BlockDTW
+Note that the y-scale is logarithmic
 ![sdtw_vs_block](./MAC_M4_PRO/sdtw_vs_block.png)
 
 ### SDTW Implementations
+Note that the y-scale is logarithmic
 ![sdtw_implementations](./MAC_M4_PRO/sdtw_implementations.png)
 
