@@ -23,4 +23,5 @@ scripts/training/train_V3_UCR_timeseries.sh
 
 # Ignore all png files except those in benchmark/MAC_M4_PRO (Used in the benchmark README)
 !benchmark/MAC_M4_PRO/*.png
-!./2026_blockDTW_Extended_paper.pdf
+
+!2026_blockDTW_Extended_paper.pdf
